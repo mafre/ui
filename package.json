@@ -1,0 +1,87 @@
+{
+	"name": "ui",
+	"version": "1.0.1",
+	"description": "UI Components",
+	"license": "MIT",
+	"types": "dist/index.d.ts",
+	"styles": "dist/index.css",
+	"main": "dist/index.js",
+	"typings": "dist/types/vngage-ui.d.ts",
+	"scripts": {
+		"build": "npm run lint && npm run clean:dist && set NODE_ENV=production && rollup -c",
+		"clean:dist": "rimraf dist/*",
+		"watch": "rollup -cw",
+		"start": "rollup -cw",
+		"test": "jest",
+		"lint": "tslint --project tsconfig.json --project"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://git@github.com/mafre/ui.git"
+	},
+	"author": {
+		"name": "Mathias Fredriksson",
+		"email": "mathias@vergic.com"
+	},
+	"jest": {
+		"transform": {
+			"^.+\\.tsx?$": "ts-jest"
+		},
+		"testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js"
+		],
+		"testPathIgnorePatterns": [],
+		"collectCoverage": true,
+		"collectCoverageFrom": [
+			"./src/utils/**/*.ts"
+		],
+		"coveragePathIgnorePatterns": [
+			"/node_modules/",
+			"/test/"
+		],
+		"coverageThreshold": {
+			"global": {
+				"branches": 90,
+				"functions": 95,
+				"lines": 95,
+				"statements": 95
+			}
+		}
+	},
+	"prettier": {
+		"semi": false,
+		"singleQuote": true
+	},
+	"devDependencies": {
+		"@types/jest": "^23.1.6",
+		"@types/node": "^8.10.0",
+		"@types/react": "latest",
+		"autoprefixer": "^8.0.0",
+		"jest": "^23.4.1",
+		"postcss-clean": "latest",
+		"prettier": "^1.13.7",
+		"react": "16",
+		"rimraf": "^2.6.2",
+		"rollup": "latest",
+		"rollup-plugin-babili": "^3.1.1",
+		"rollup-plugin-commonjs": "latest",
+		"rollup-plugin-css-only": "latest",
+		"rollup-plugin-livereload": "latest",
+		"rollup-plugin-node-resolve": "latest",
+		"rollup-plugin-postcss": "latest",
+		"rollup-plugin-replace": "latest",
+		"rollup-plugin-serve": "latest",
+		"rollup-plugin-typescript2": "latest",
+		"rollup-watch": "latest",
+		"ts-jest": "^23.0.1",
+		"ts-node": "^7.0.0",
+		"tslib": "latest",
+		"tslint": "latest",
+		"tslint-config-prettier": "^1.13.0",
+		"tslint-config-standard": "^7.1.0",
+		"typescript": "latest"
+	}
+}
